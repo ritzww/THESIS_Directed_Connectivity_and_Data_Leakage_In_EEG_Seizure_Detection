@@ -104,7 +104,7 @@ function extract_gc_features(filePath)
         ptoc;
 
     
-        % Integrate Bands ---------------------------
+        % Integrate Bands with Trapzoid ---------------------------
         nfreqs = size(f, 3);
         freq_axis = linspace(0, fs/2, nfreqs);
     
