@@ -32,35 +32,6 @@ repository because of their size.
   joblib and `timescoring` (SzCORE event scoring)
 - MATLAB with the MVGC toolbox (Barnett & Seth, 2014)
 
-## Running the pipeline
-
-The scripts use relative paths and are meant to be run from their own folder.
-File names contain spaces, so quote them, for example
-`python "1. loro_main.py"`.
-
-1. **Filter the recordings**: `preprocess/1. filter_recordings.py`
-   reads the EDF files and the summary file of each case, applies a 0.5 Hz
-   high-pass and a 60 Hz notch filter, and writes HDF5 files. The patient
-   range is set at the bottom of the script.
-2. **Select channels**: `preprocess/2. select_channels.py`
-   keeps the 18-channel bipolar montage in a fixed order.
-3. **Model order**: `feature_extraction/aic_bic.m`
-   evaluates the VAR model order per patient (results in
-   `csv_txt_files/var_order_all.csv`).
-4. **Features**: `feature_extraction/feature_extraction_loop.m` calls
-   `extract_gc_features.m` for every recording. Window length, step and VAR
-   order are set at the top of `extract_gc_features.m` and are stored in each
-   output file.
-5. **Main model**: `models/1. loro_main.py`
-   nested leave-one-record-out evaluation, one model per patient. The patient
-   is set at the bottom of the script. Writes the summary, segment, event and
-   false-positive tables.
-6. **Leakage comparison**: `models/2. loro_fixex.py` (leave-one-record-out)
-   and `models/3. random_segmentation.py` (stratified 5-fold on random
-   windows), both with the same fixed hyperparameters.
-7. **Tables and figures**: the notebooks in `visualisation_and_results/`, in
-   numerical order. `5. prepare_feature_analysis.py` writes the files used by
-   notebooks 6 and 7.
 
 ## Where each result in the thesis comes from
 
@@ -86,7 +57,7 @@ File names contain spaces, so quote them, for example
 | `SEGMENTS_FIXED.csv` | record | Window-level results of the fixed-hyperparameter LORO run |
 | `LEAKY_FIXED.csv` | patient and fold | Window-level results of the random-window cross-validation |
 | `LONG_SELECTED_FEATURES.csv` | selected feature | Features selected by mRMR in each fold |
-| `ICTAL_VS_NONICTAL_ALLREC_SUMMARY.csv` | patient and feature | AUC and Cohen's d between ictal and non-ictal windows |
+| `ICTAL_VS_NONICTAL_ALLREC_SUMMARY.csv` | patient and feature |  Ictal vs. non-ictal windows |
 
 ## Notes
 
