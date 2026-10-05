@@ -28,8 +28,7 @@ repository because of their size.
 
 ## Requirements
 
-- Python 3.12 with MNE-Python, NumPy, SciPy, pandas, h5py, scikit-learn 1.6.1,
-  joblib and `timescoring` (SzCORE event scoring)
+- Python 3.12 
 - MATLAB with the MVGC toolbox (Barnett & Seth, 2014)
 
 
