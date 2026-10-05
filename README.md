@@ -33,19 +33,6 @@ repository because of their size.
 - MATLAB with the MVGC toolbox (Barnett & Seth, 2014)
 
 
-## Where each result in the thesis comes from
-
-| Thesis | Produced by | Result files |
-|---|---|---|
-| Section 3.1, raw EEG example | `visualisation_and_results/1. data_exploration.ipynb` | recordings |
-| Section 3.2, filter figures | `archive/preprocessing_before_clean/1. Preprocessing.ipynb` (last cell) | recordings |
-| Section 3.3.1, VAR model order | `visualisation_and_results/0. var_model_order.ipynb` | `csv_txt_files/var_order_all.csv` |
-| Section 4.1, window-level results | `visualisation_and_results/3. segment_level_results.ipynb` | `csv_results/SEGMENTS_MAIN_MODEL.csv` |
-| Section 4.2, event-level results | `visualisation_and_results/2. event_level_results.ipynb` | `csv_results/RESULTS_MAIN_MODEL.csv`, `EVENTS_MAIN_MODEL.csv`, `FALSE_POSITIVES_MAIN_MODEL.csv` |
-| Section 4.4, temporal leakage | `visualisation_and_results/4. leakage_analysis.ipynb` | `csv_results/SEGMENTS_FIXED.csv`, `LEAKY_FIXED.csv` |
-| Sections 4.5.1 and 4.5.2, selected features | `visualisation_and_results/6. feature_selection_analysis.ipynb` | `csv_results/LONG_SELECTED_FEATURES.csv` |
-| Section 4.5.3, ictal changes in connectivity | `visualisation_and_results/7. ictal_connectivity_changes.ipynb` | `csv_results/ICTAL_VS_NONICTAL_ALLREC_SUMMARY.csv` |
-
 ## Result files
 
 | File | One row per | Contents |
